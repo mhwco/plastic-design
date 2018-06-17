@@ -24,3 +24,12 @@ a:hover{
 a:active{
 	text-decoration-line: none;
 }
+
+.full-section {
+	background:#333333
+}
+
+.full-section-content {
+	color:#fff;
+	font-size:18px
+}
