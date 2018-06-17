@@ -33,3 +33,21 @@ a:active{
 	color:#fff;
 	font-size:18px
 }
+
+.green-b{
+	color: white;
+	background: #00c853;
+}
+
+.blue-b{
+	color: white;
+	background: #00a0e9;
+}
+
+#footer{
+	background-color:#333;
+}
+
+.copyright{
+	color:#fff;
+}
