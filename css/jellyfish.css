@@ -1,19 +1,20 @@
-/* CSS Document */
+/*
+*Plastic Design
+*Jellyfish CSS Library v0.0.1_pre
+*https://pd.mhwco.org/en/design/jellyfish
+*Copyright(c)MHW Cooperation Organization
+*Released Under MIT License
+*https://pd.mhwco.org/en/copyright
+*View on GitHub
+*https//github.com/mhwco/plastic-design
+*/
+/*pre-definitions start*/
 body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.title-bar {
-	background: #fff;
-}
-
 a {
 	text-decoration: none;
-	color:#fff;
-}
-
-#title-bar {
-	background: #00a0e9;
 	color:#fff;
 }
 
@@ -24,16 +25,29 @@ a:hover{
 a:active{
 	text-decoration-line: none;
 }
-
-.full-section {
-	background:#333333
+/*pre-definitions end*/
+/*text sizing start*/
+.extra-small-content {
+	font-size: 12px;
 }
 
-.full-section-content {
-	color:#fff;
-	font-size:18px
+.small-content {
+	font-size: 14px;
 }
 
+.content {
+	font-size: 16px;
+}
+
+.large-content {
+	font-size:18px;
+}
+
+.extra-large-content {
+	font-size: 20px;
+}
+/*text sizing end*/
+/*colour start*/
 .green-b{
 	color: white;
 	background: #00c853;
@@ -44,10 +58,8 @@ a:active{
 	background: #00a0e9;
 }
 
-#footer{
+.dark-dark-gray-b{
+	color:white;
 	background-color:#333;
 }
-
-.copyright{
-	color:#fff;
-}
+/*colour end*/
