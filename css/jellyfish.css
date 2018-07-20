@@ -49,17 +49,90 @@ a:active{
 /*text sizing end*/
 /*colour start*/
 .green-b{
-	color: white;
+	color: #fff
 	background: #00c853;
 }
 
 .blue-b{
-	color: white;
+	color: #fff;
 	background: #00a0e9;
 }
 
+.black-b {
+	color:#fff
+	background-color:#000;
+}
+
 .dark-dark-gray-b{
-	color:white;
-	background-color:#333;
+	color:#fff;
+	background-color:#222;
+}
+
+.dark-gray-b {
+	color:#fff;
+	background-color:#555;
+}
+
+.gray-b {
+	color:#000;
+	background-color:#888;
+}
+
+.light-gray-b {
+	color:#000;
+	background-color:#bbb;
+}
+
+.light-light-gray-b {
+	color:#000;
+	background-color:#eee;
+}
+
+.white-b {
+	color:#000;
+	background-color:#fff;
 }
 /*colour end*/
+/*shadow start*/
+.extra-shadow {
+	box-shadow:0 0 10px;
+}
+
+.shadow,.r-shaodw {
+	box-shadow:0 0 5px;
+	transition:box-shadow 0.2s;
+}
+
+.micro-shadow {
+	box-shadow:0 0 2px;
+}
+
+.r-shadow:hover {
+	box-shadow:0 0 15px;
+}
+
+.r-shadow:active {
+	box-shadow:0 0 5px;
+}
+/*shadow end*/
+/*radius start*/
+.big-big-radius {
+	border-radius:8px;
+}
+
+.big-radius {
+	border-radius:6px;
+}
+
+.radius {
+	border-radius:4px;
+}
+
+.small-radius {
+	border-radius:2px;
+}
+
+.no-radius {
+	border-radius:none;
+}
+/*radius end*/
