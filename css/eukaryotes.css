@@ -81,7 +81,6 @@ body {
 
 .card {
 	border:solid #777 1px;
-	height:100%;
 }
 
 .one-second {
@@ -93,9 +92,9 @@ body {
 }
 
 .inner-card {
+	padding:2px;
 	display:flex;
 	justify-content:space-around;
-	align-items:center;
 }
 
 .one-fourth{
