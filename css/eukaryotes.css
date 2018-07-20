@@ -92,6 +92,16 @@ body {
 	border-bottom: solid #777;
 }
 
+.inner-card {
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+}
+
+.inc-image {
+	height:80%;
+}
+
 .one-fourth{
 	width:24%;
 }
