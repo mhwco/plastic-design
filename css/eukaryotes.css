@@ -92,10 +92,9 @@ body {
 }
 
 .inner-card {
-	padding:2px;
+	margin:4px;
 	display:flex;
 	justify-content:space-around;
-	align-items:center;
 }
 
 .one-fourth{
