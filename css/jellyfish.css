@@ -98,7 +98,12 @@ a:active{
 	box-shadow:0 0 10px;
 }
 
-.shadow,.r-shaodw {
+.shadow {
+	box-shadow:0 0 5px;
+	transition:box-shadow 0.2s;
+}
+
+.r-shadow {
 	box-shadow:0 0 5px;
 	transition:box-shadow 0.2s;
 }
