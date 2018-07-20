@@ -95,6 +95,7 @@ body {
 	padding:2px;
 	display:flex;
 	justify-content:space-around;
+	align-items:center;
 }
 
 .one-fourth{
