@@ -95,16 +95,11 @@ a:active{
 /*colour end*/
 /*shadow start*/
 .extra-shadow {
-	box-shadow:0 0 10px;
+	box-shadow:0 0 10px #000;
 }
 
-.shadow {
-	box-shadow:0 0 5px;
-	transition:box-shadow 0.2s;
-}
-
-.r-shadow {
-	box-shadow:0 0 5px;
+.shadow , .r-shadow{
+	box-shadow:0 0 5px #000;
 	transition:box-shadow 0.2s;
 }
 
