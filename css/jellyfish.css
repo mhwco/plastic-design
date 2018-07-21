@@ -99,7 +99,7 @@ a:active{
 }
 
 .shadow , .r-shadow{
-	box-shadow:0 0 5px #000;
+	box-shadow:0 0 4px #000;
 	transition:box-shadow 0.2s;
 }
 
