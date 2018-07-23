@@ -49,7 +49,7 @@ a:active{
 /*text sizing end*/
 /*colour start*/
 .green-b{
-	color: #fff
+	color: #fff;
 	background: #00c853;
 }
 
@@ -59,7 +59,7 @@ a:active{
 }
 
 .black-b {
-	color:#fff
+	color:#fff;
 	background-color:#000;
 }
 
