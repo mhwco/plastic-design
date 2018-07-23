@@ -65,11 +65,11 @@ body {
 }
 
 .full-section-content {
-	max-width: 40%;
+	width: 40%;
 }
 
 .full-section-content-img {
-	height:280px
+/*	height:280px;*/
 }
 
 .card-container {
