@@ -102,6 +102,11 @@ body {
 	border:solid #777 1px;
 }
 
+.card-image{
+/*	width: 150px;*/
+	margin-right: 4px;
+}
+
 .one-second {
 	width:49%;
 }
@@ -114,7 +119,7 @@ body {
 	margin:4px;
 	display:flex;
 	align-items: center;
-	justify-content:space-around;
+/*	justify-content:space-around;*/
 }
 
 .one-fourth{
