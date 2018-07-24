@@ -84,7 +84,7 @@ body {
 }
 
 .full-section-content {
-	width: 40%;
+	max-width: 40%;
 }
 
 .full-section-content-img {
