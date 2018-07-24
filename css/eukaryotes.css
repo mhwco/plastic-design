@@ -22,6 +22,11 @@
 		overflow-x: scroll;
 	}
 }
+@media(max-width:830px){
+	.full-section {
+		display:block;
+	}
+}
 body {
 	margin:0;
 }
