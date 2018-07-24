@@ -136,3 +136,6 @@ a:active{
 	border-radius:none;
 }
 /*radius end*/
+.no-list {
+	list-style-type: none;
+}
