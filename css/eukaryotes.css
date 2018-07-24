@@ -72,7 +72,7 @@ body {
 }
 
 .full-section {
-	width:100%;
+/*	width:100%;*/
 	min-height:400px;
 	align-items: center;
 	justify-content: space-around;
@@ -103,7 +103,7 @@ body {
 }
 
 .card-image{
-/*	width: 150px;*/
+	width: 150px;
 	margin-right: 4px;
 }
 
