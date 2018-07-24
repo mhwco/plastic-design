@@ -9,12 +9,17 @@
 *https//github.com/mhwco/plastic-design
 */
 @media (max-width: 661px){
+	#title-self {
+		display:none;
+	}
+	.one-fourth,.one-second,.three-fourths{
+		width: 100%;
+	}
+}
+@media(max-width:432px){
 	#title-bar-nav {
 		white-space: nowrap;
 		overflow-x: scroll;
-	}
-	#title-self {
-		display:none;
 	}
 }
 body {
@@ -93,7 +98,7 @@ body {
 }
 
 .one-second {
-		width:49%;
+	width:49%;
 }
 .card-h {
 	margin:4px;
