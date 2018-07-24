@@ -25,6 +25,7 @@
 @media(min-width:830px){
 	.full-section {
 		display:flex;
+		padding: 10px;
 	}
 }
 body {
