@@ -12,8 +12,6 @@
 	#title-bar-nav {
 		white-space: nowrap;
 		overflow-x: scroll;
-		margin:0 24px;
-		float:left;
 	}
 }
 body {
