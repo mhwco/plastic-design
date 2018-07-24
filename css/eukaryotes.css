@@ -13,6 +13,9 @@
 		white-space: nowrap;
 		overflow-x: scroll;
 	}
+	#title-self {
+		display:none;
+	}
 }
 body {
 	margin:0;
