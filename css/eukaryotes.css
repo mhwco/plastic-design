@@ -25,7 +25,6 @@
 @media(min-width:830px){
 	.full-section {
 		display:flex;
-		padding: 10px;
 	}
 }
 body {
@@ -77,6 +76,7 @@ body {
 	min-height:400px;
 	align-items: center;
 	justify-content: space-around;
+	padding: 10px;
 }
 
 .main {
