@@ -181,6 +181,18 @@ body {
 	z-index: 500;
 	min-width:400px;
 	min-height: 200px;
+	display: flex;
+	align-items: center;
+	padding: 12px;
+}
+
+.left-top-dialog>h2,			.center-top-dialog>h2,			.right-top-dialog>h2,
+
+.left-center-dialog>h2,		.center-dialog>h2,				.right-center-dialog>h2,
+
+.left-bottom-dialog>h2,		.center-bottom-dialog>h2,		.right-bottom-dialog>h2
+{
+	font-size:18px;
 }
 
 .right-top-dialog {
