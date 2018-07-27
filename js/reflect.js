@@ -16,19 +16,19 @@ var rf={
 	dialog:function(s){
 		return {
 			toogle:function(){
-				$("#"+"dialog-"s).toggle(200);
+				$("#"+"dialog-"+s).toggle(200);
 				$("#mask").toogle();
 			},
 			open:function(){
-				$("#"+"dialog-"s).show(200);
+				$("#"+"dialog-"+s).show(200);
 				$("#mask").show();
 			},
 			close:function(){
-				$("#"+"dialog-"s).hide(200);
+				$("#"+"dialog-"+s).hide(200);
 				$("#mask").hide();
 			},
 			isOpen:function(){
-				return $(s).is(":visible");
+				return $("#"+"dialog-"+s).is(":visible");
 			}
 		};
 	}
