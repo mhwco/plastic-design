@@ -8,8 +8,7 @@ $(document).ready(function(){
 		$("#mask").hide();
 	});
 });
-function reflect(){}
-reflect.prototype={
+var rf={
 	test:function(){
 		"use strict";
 		alert("sucess!");
@@ -35,4 +34,3 @@ reflect.prototype={
 		};
 	}
 };
-var rf=new reflect();
