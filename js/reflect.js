@@ -1,6 +1,4 @@
 // JavaScript Document
-(function(){
-"use strict";
 $(document).ready(function(){
 	alert("q");
 	$("body").prepend('<div id="mask"></div>');
@@ -34,4 +32,3 @@ var rf={
 		};
 	}
 };
-});
