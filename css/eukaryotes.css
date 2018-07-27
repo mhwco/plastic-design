@@ -170,3 +170,28 @@ body {
 .copyright {
 	margin-left:32px;
 }
+
+.left-top-dialog,			.center-top-dialog,			.right-top-dialog,
+
+.left-center-dialog,		.center-dialog,				.right-center-dialog,
+
+.left-bottom-dialog,		.center-bottom-dialog,		.right-bottom-dialog
+{
+	position: fixed;
+	z-index: 500;
+	min-width:400px;
+	min-height: 200px;
+}
+
+.right-top-dialog {
+	right:5px;
+	top:5px;
+}
+
+#mask {
+	position: fixed;
+	width:100%;
+	height:100%;
+	z-index:400;
+	background-color: rgba(0,0,0,0.50);
+}
