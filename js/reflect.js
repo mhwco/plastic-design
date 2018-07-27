@@ -20,11 +20,6 @@ reflect.prototype={
 			toogle:function(){
 				$(s).toggle(200);
 				$("#mask").toogle();
-				/*if($("#mask").is(":visible")){
-					$("#mask").hide();
-				}else{
-					$("#mask").show();
-				}*/
 			},
 			open:function(){
 				$(s).show(200);
