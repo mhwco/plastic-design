@@ -10,7 +10,7 @@ var rf={
 	test:function(){
 		alert("sucess!");
 	},
-	mask{
+	mask:{
 		create:function(){
 			$("body").prepend('<div id="mask"></div>');
 			$("#mask").hide();
