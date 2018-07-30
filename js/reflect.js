@@ -7,7 +7,7 @@ $(document).ready(function(){
 		$(".hide-on-mask").hide(200);
 		$("#mask").hide();
 	});
-	$(".left-top-dialog,.center-top-dialog,.right-top-dialog,.left-center-dialog,	.center-dialog,.right-center-dialog,.left-bottom-dialog,.center-bottom-dialog,.right-bottom-dialog").hide();
+	$(".dialog").hide();
 });
 var rf={
 	test:function(){
@@ -33,7 +33,7 @@ var rf={
 				return "dialog-"+s;
 			},
 			create:function(){
-				$("body").prepend('<div id="'+this.getId()+'" style="display:none"></div>');
+				$("body").prepend('<div id="'+this.getId()+'" class="dialog" style="display:none"></div>');
 				return this;
 			},
 		
@@ -53,28 +53,46 @@ var rf={
 				String title:标题。
 				String text:描述文本。
 				String[] items:欲选项目(type==1 || type=2)。
+				String className:对话框样式类。
 				Number progressStyle:进度样式(type==4)。0:等待型,1:进度型。默认值为0。
 				Boolean allowReturnOnClickMask:是否允许在点击mask是返回。true为是，false为否。前提是在调用时with_mask参数需要为空或者true。默认值为true
 				<无返回值> onReturn:f(Number method,Object item):当用户退出dialog时触发。method是用户的退出方式。-1:Mask(allowReturnOnClickMask==true),0:Positive,1:Negative,2:Neutral。
 				item是用户返回的内容。当type==1 || type=2时，Number item是用户选中项目的序号。当type==3时，String item是用户输入的内容。当type==0 || type==4时，item==undefined
 				*/
-				switch(set.type){
-					case 0://alert
-						
+				switch(set.position){
+					case 0://lt
+						$("#"+this.getId()).addClass("left-top-dialog");
 						break;
-					case 1://select
-						
+					case 1://ct
+						$("#"+this.getId()).addClass("center-top-dialog");
 						break;
-					case 2://list
-						
+					case 2://rt
+						$("#"+this.getId()).addClass("right-top-dialog");
 						break;
-					case 3://prompt
-						
+					case 3://lc
+						$("#"+this.getId()).addClass("left-center-dialog");
 						break;
-					case 4://list
-						
+					case 4://cc
+						$("#"+this.getId()).addClass("center-dialog");
 						break;
+					case 5://rc
+						$("#"+this.getId()).addClass("right-center-dialog");
+						break;
+					case 6://lb
+						$("#"+this.getId()).addClass("left-bottom-dialog");
+						break;
+					case 7://cb
+						$("#"+this.getId()).addClass("center-bottom-dialog");
+						break;
+					case 8://rb
+						$("#"+this.getId()).addClass("right-bottom-dialog");
+						break;
+					default:
+						$("#"+this.getId()).addClass("center-dialog");
 				}
+				$("#"+this.getId()).addClass(set.className);
+				$("#"+this.getId()).append("<h2>"+set.title+"</h2>");
+				$("#"+this.getId()).append('<div class="dialog-content">'+set.text+"</div>");
 			},
 			toogle:function(with_mask){
 				if(with_mask === undefined || with_mask === null){

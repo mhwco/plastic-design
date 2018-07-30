@@ -171,27 +171,21 @@ body {
 	margin-left:32px;
 }
 
-.left-top-dialog,			.center-top-dialog,			.right-top-dialog,
-
-.left-center-dialog,		.center-dialog,				.right-center-dialog,
-
-.left-bottom-dialog,		.center-bottom-dialog,		.right-bottom-dialog
-{
+.dialog {
 	position: fixed;
 	z-index: 500;
 	min-width:400px;
 	min-height: 200px;
+/*
 	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 	align-items: center;
+*/
 	padding: 12px;
 }
 
-.left-top-dialog>h2,		.center-top-dialog>h2,			.right-top-dialog>h2,
-
-.left-center-dialog>h2,		.center-dialog>h2,				.right-center-dialog>h2,
-
-.left-bottom-dialog>h2,		.center-bottom-dialog>h2,		.right-bottom-dialog>h2
-{
+.dialog>h2 {
 	font-size:18px;
 }
 
