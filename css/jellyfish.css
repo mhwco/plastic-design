@@ -104,6 +104,10 @@ a:active{
 }
 /*colour end*/
 /*shadow start*/
+.dialog {
+	box-shadow:0 0 24px #000;
+}
+
 .extra-shadow {
 	box-shadow:0 0 10px #000;
 }

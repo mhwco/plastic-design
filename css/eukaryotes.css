@@ -174,8 +174,8 @@ body {
 .dialog {
 	position: fixed;
 	z-index: 500;
-	min-width:400px;
-	min-height: 200px;
+	min-width:300px;
+	min-height: 100px;
 /*
 	display: flex;
 	flex-direction: column;
@@ -200,4 +200,21 @@ body {
 	height:100%;
 	z-index:400;
 	background-color: rgba(0,0,0,0.50);
+}
+
+.dialog-button {
+	border-radius: 4px;
+	display: inline-block;
+	font-size: 16px;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 16px;
+	margin: 4px 0;
+	cursor: pointer;
+}
+
+.dialog-positive {
+	position: absolute;
+	bottom:0;
+	right:4px;
 }

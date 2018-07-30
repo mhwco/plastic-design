@@ -33,7 +33,7 @@ var rf={
 				return "dialog-"+s;
 			},
 			create:function(){
-				$("body").prepend('<div id="'+this.getId()+'" class="dialog" style="display:none"></div>');
+				$("body").prepend('<div id="'+this.getId()+'" class="dialog white-b radius" style="display:none"></div>');
 				return this;
 			},
 		
@@ -53,7 +53,7 @@ var rf={
 				String title:标题。
 				String text:描述文本。
 				String[] items:欲选项目(type==1 || type=2)。
-				String className:对话框样式类。
+				String className:额外的对话框样式类。
 				Number progressStyle:进度样式(type==4)。0:等待型,1:进度型。默认值为0。
 				Boolean allowReturnOnClickMask:是否允许在点击mask是返回。true为是，false为否。前提是在调用时with_mask参数需要为空或者true。默认值为true
 				<无返回值> onReturn:f(Number method,Object item):当用户退出dialog时触发。method是用户的退出方式。-1:Mask(allowReturnOnClickMask==true),0:Positive,1:Negative,2:Neutral。
