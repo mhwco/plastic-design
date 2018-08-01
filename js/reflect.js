@@ -96,6 +96,22 @@ var rf={
 					$("#"+this.getId()).addClass(set.className);
 					$("#"+this.getId()).append("<h2>"+set.title+"</h2>");
 					$("#"+this.getId()).append('<div class="dialog-content">'+set.text+"</div>");
+					switch(set.type){
+						case 0://alert
+							break;
+						case 1://select
+							$("#"+this.getId()).append("<select></select>");
+							for(var i=0;i<set.items.length;i++){
+								$("#"+this.getId()+" select").append('<option name="item-'+i+'">'+set.items[i]+'</option>');
+							}
+							break;
+						case 2://list
+							break;
+						case 3://prompt
+							break;
+						case 4://progress
+							break;
+					}
 				},
 				toogle:function(with_mask){
 					if(with_mask === undefined || with_mask === null){
