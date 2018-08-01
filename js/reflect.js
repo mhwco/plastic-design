@@ -29,7 +29,7 @@ var rf={
 	},
 	dialog:function(s){
 		if($("#dialog-"+s).length>0 && !($("#dialog-"+s).is(".dialog"))){
-			throw new Error("The selected element is not a dialog. It requires a existing element with class 'dialog' or unexisting element ready to create");
+			throw new Error("The selected element '"+s+"' is not a dialog. It requires a existing element with class 'dialog' or unexisting element ready to create");
 		}else{
 			return {
 				getId:function(){
