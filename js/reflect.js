@@ -1,5 +1,15 @@
-"use strict";
 // JavaScript Document
+/*!
+*Plastic Design
+*Reflect JavaScript Library v0.0.1_pre
+*https://pd.mhwco.org/en/design/reflect
+*Copyright(c)MHW Cooperation Organization
+*Released Under MIT License
+*https://pd.mhwco.org/en/copyright
+*View on GitHub
+*https//github.com/mhwco/plastic-design
+*/
+"use strict";
 $(document).ready(function(){
 	$("body").prepend('<div id="mask"></div>');
 	$("#mask").hide();
@@ -8,11 +18,38 @@ $(document).ready(function(){
 		$("#mask").hide();
 	});
 	$(".dialog").hide();
+	rf.RfTypeNotMatchError.prototype=new Error();
+	rf.RfTypeNotMatchError.prototype.constructor=rf.RfTypeNotMatchError;
 });
 var rf={
-	test:function(){
-		alert("sucess!");
+	/*Rf Errors start*/
+	RfTypeNotMatchError:function(m){
+		if(m){
+			this.message=m;
+		}else{
+			this.message="The selected element is not a specified Reflect entity";
+		}
+		this.name="RfTypeNotMatchError";
 	},
+	RfEntityNotFoundError:function(m){
+		if(m){
+			this.message=m;
+		}else{
+			this.message="The selected element is not found.";
+		}
+		this.message=m;
+		this.name="RfEntityNotFoundError";
+	},
+	RfEntityAlreadyExistError:function(m){
+		if(m){
+			this.message=m;
+		}else{
+			this.message="The selected element that should have been created already exists.";
+		}
+		this.message=m;
+		this.name="RfEntityAlreadyExistError";
+	},
+	/*Rf Errors end*/
 	mask:{
 		show:function(){
 			$("#mask").show();
@@ -29,18 +66,24 @@ var rf={
 	},
 	dialog:function(s){
 		if($("#dialog-"+s).length>0 && !($("#dialog-"+s).is(".dialog"))){
-			throw new Error("The selected element '"+s+"' is not a dialog. It requires a existing element with class 'dialog' or unexisting element ready to create");
+			throw new rf.RfTypeNotMatchError("The selected element with the id '"+this.getId(s)+"' is not a dialog. It requires a existing element with class 'dialog' or unexisting element ready to create");
 		}else{
 			return {
 				getId:function(){
 					return "dialog-"+s;
 				},
 				create:function(){
+					if($("#"+this.getId()).length>0){
+						throw new rf.RfEntityAlreadyExistErrorError("The selected dialog '"+s+"' already exists.");
+					}
 					$("body").prepend('<div id="'+this.getId()+'" class="dialog white-b radius" style="display:none"></div>');
 					return this;
 				},
 
 				build:function(set){
+					if($("#"+this.getId()).length===0){
+						throw new rf.RfEntityNotFoundError("The selected dialog '"+s+"' is not found.");
+					}
 					/**
 					set:
 					Number type:什么类型的对话框。0:alert,1:select,2:list,3:prompt,4:progress。默认值为0
@@ -62,6 +105,8 @@ var rf={
 					<无返回值> onReturn:f(Number method,Object item):当用户退出dialog时触发。method是用户的退出方式。-1:Mask(allowReturnOnClickMask==true),0:Positive,1:Negative,2:Neutral。
 					item是用户返回的内容。当type==1 || type=2时，Number item是用户选中项目的序号。当type==3时，String item是用户输入的内容。当type==0 || type==4时，item==undefined
 					*/
+					var selected_item,
+						return_method;
 					switch(set.position){
 						case 0://lt
 							$("#"+this.getId()).addClass("left-top-dialog");
@@ -94,8 +139,12 @@ var rf={
 							$("#"+this.getId()).addClass("center-dialog");
 					}
 					$("#"+this.getId()).addClass(set.className);
-					$("#"+this.getId()).append("<h2>"+set.title+"</h2>");
-					$("#"+this.getId()).append('<div class="dialog-content">'+set.text+"</div>");
+					if(set.title){
+						$("#"+this.getId()).append("<h2>"+set.title+"</h2>");
+					}
+					if(set.text){
+						$("#"+this.getId()).append('<div class="dialog-content">'+set.text+"</div>");
+					}
 					switch(set.type){
 						case 0://alert
 							break;
@@ -112,9 +161,13 @@ var rf={
 						case 4://progress
 							break;
 					}
+					
 				},
 				toogle:function(with_mask){
-					if(with_mask === undefined || with_mask === null){
+					if($("#"+this.getId()).length===0){
+						throw new rf.RfEntityNotFoundError("The selected dialog '"+s+"' is not found.");
+					}
+					if(!with_mask){
 						with_mask=true;
 					}
 					$("#"+this.getId()).toggle(200);
@@ -123,7 +176,10 @@ var rf={
 					}
 				},
 				open:function(with_mask){
-					if(with_mask === undefined || with_mask === null){
+					if($("#"+this.getId()).length===0){
+						throw new rf.RfEntityNotFoundError("The selected dialog '"+s+"' is not found.");
+					}
+					if(!with_mask){
 						with_mask=true;
 					}
 					$("#"+this.getId()).show(200);
@@ -132,7 +188,10 @@ var rf={
 					}
 				},
 				close:function(with_mask){
-					if(with_mask === undefined || with_mask === null){
+					if($("#"+this.getId()).length===0){
+						throw new rf.RfEntityNotFoundError("The selected dialog '"+s+"' is not found.");
+					}
+					if(!with_mask){
 						with_mask=true;
 					}
 					$("#"+this.getId()).hide(200);
@@ -141,6 +200,9 @@ var rf={
 					}
 				},
 				isOpen:function(){
+					if($("#"+this.getId()).length===0){
+						throw new rf.RfEntityNotFoundError("The selected dialog '"+s+"' is not found.");
+					}
 					return $("#"+this.getId()).is(":visible");
 				}
 			};

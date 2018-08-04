@@ -49,22 +49,22 @@ a:active{
 /*text sizing end*/
 /*colour start*/
 .green-b{
-	color: #fff;
+	color:#fff;
 	background: #00c853;
 }
 
 .blue-b{
-	color: #fff;
+	color:#fff;
 	background: #00a0e9;
 }
 
 .pink-b{
-	color: #fff;
+	color:#fff;
 	background: #f06;
 }
 
 .orange-b{
-	color: #fff;
+	color:#fff;
 	background: #f93;
 }
 
@@ -118,15 +118,15 @@ a:active{
 }
 
 .micro-shadow {
-	box-shadow:0 0 2px;
+	box-shadow:0 0 2px #000;
 }
 
 .r-shadow:hover {
-	box-shadow:0 0 15px;
+	box-shadow:0 0 15px #000;
 }
 
 .r-shadow:active {
-	box-shadow:0 0 5px;
+	box-shadow:0 0 5px #000;
 }
 /*shadow end*/
 /*radius start*/

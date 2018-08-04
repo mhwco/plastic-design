@@ -37,6 +37,7 @@ body {
 	height:60px;
 	display: flex;
 	align-items: center;
+	flex-direction: row;
 }
 
 #title-bar-icon {
@@ -95,6 +96,7 @@ body {
 	width:100%;
 	display:flex;
 	justify-content: space-around;
+	flex-direction: row;
 	margin: 10px 0;
 }
 
@@ -116,9 +118,11 @@ body {
 }
 
 .inner-card {
+	min-height: 150px;
 	margin:4px;
 	display:flex;
 	align-items: center;
+	flex-direction: row;
 /*	justify-content:space-around;*/
 }
 
@@ -175,14 +179,14 @@ body {
 	position: fixed;
 	z-index: 500;
 	min-width:300px;
-	min-height: 100px;
+/*	min-height: 100px;*/
 /*
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
 */
-	padding: 12px;
+	padding: 8px;
 }
 
 .dialog>h2 {
@@ -209,12 +213,40 @@ body {
 	height: 36px;
 	line-height: 36px;
 	padding: 0 16px;
-	margin: 4px 0;
+	margin: 0 2px;
 	cursor: pointer;
 }
 
 .dialog-positive {
+/*
+	position: absolute;
+	bottom:0;
+	right:0;
+*/
+}
+
+.positive-and-negative-botton-container {
+/*
 	position: absolute;
 	bottom:0;
 	right:4px;
+*/
+	float: right;
+}
+
+.neutral-botton-container {
+/*
+	position: absolute;
+	bottom:0;
+	left:4px;
+*/
+	float: left;
+}
+
+.dialog>select {
+	margin: 4px;
+}
+
+.dialog-button-container {
+	margin-top: 4px;
 }
