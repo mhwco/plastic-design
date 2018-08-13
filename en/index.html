@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Plastic Design</title>
 <link rel="stylesheet" href="/css/eukaryotes.css"/>
 <link rel="stylesheet" href="/css/jellyfish.css"/>
@@ -29,16 +30,16 @@
 -->
 		</div>
 	</div>
-	<header id="title-bar" class="dark-dark-gray-b extra-shadow">
-		<img id="title-bar-icon" src="/image/plastic.svg" alt=""/>
-		<h1 id="title-self"><a href="">Plastic Design</a></h1>
-		<nav id="title-bar-nav">
+	<header class="title-bar dark-dark-gray-b extra-shadow">
+		<img class="title-bar-icon" src="/image/plastic.svg" alt=""/>
+		<h1 class="title-self"><a href="">Plastic Design</a></h1>
+		<nav class="title-bar-nav">
 			<a class="title-bar-nav-item" href="docs/index.html">Documentation</a>
 			<a class="title-bar-nav-item" href="design/index.html">Design Kits</a>
 			<a class="title-bar-nav-item" href="tools/index.html">Tools</a>
 		</nav>
-		<nav id="title-bar-buttton-nav">
-			<img id="nav-button-language" src="/image/language.svg" alt="لغة/语言/Language/Langue/язык/Idioma" title="لغة/语言/Language/Langue/язык/Idioma"/>
+		<nav class="title-bar-buttton-nav">
+			<img class="nav-button" id="nav-button-language" src="/image/language.svg" alt="لغة/语言/Language/Langue/язык/Idioma" title="لغة/语言/Language/Langue/язык/Idioma"/>
 		</nav>
 	</header>
 	<main class="main">
@@ -55,15 +56,15 @@
 			</div>
 		</section>
 		<section>
-			<div class="card-container">
-				<div class="card one-second r-shadow radius" onClick="location.href='https://github.com/mhwco/plastic-design'">
+			<div class="linear-h">
+				<div class="card col col-6 r-shadow radius" onClick="location.href='https://github.com/mhwco/plastic-design'">
 					<h2 class="card-h">Open Source Project</h2>
 					<div class="inner-card">
 						<img class="card-image" src="/image/open-source.svg" alt="github">
 						Plastic design is open source under MIT License on GitHub. Click this card to view Plastic Design project on GitHub.
 					</div>
 				</div>
-				<div class="card one-second r-shadow radius" onClick="location.href='docs/guideline/index.html'">
+				<div class="card col col-6 r-shadow radius" onClick="location.href='docs/guideline/index.html'">
 					<h2 class="card-h">Design Guidelines</h2>
 					<div class="inner-card">
 						<img class="card-image" src="/image/guideline.svg" alt="guidelines">
@@ -112,8 +113,8 @@
 		</section>
 		<section>
 			<h1 class="section-title">Tools</h1>
-			<div class="card-container">
-				<div class="card one-second r-shadow radius" onClick="location.href='temple/index.html'">
+			<div class="linear-h">
+				<div class="card col col-6 r-shadow radius" onClick="location.href='temple/index.html'">
 					<h2 class="card-h">Design Temple</h2>
 						<div class="inner-card">
 							<img class="card-image" src="/image/temple.svg" alt="temple"/>
@@ -121,7 +122,7 @@
 							Welcome to the Design Temple where will inspire you.
 						</div>
 				</div>
-				<div class="card one-second r-shadow radius" onClick="location.href='/blog/index.html'">
+				<div class="card col col-6 r-shadow radius" onClick="location.href='/blog/index.html'">
 					<h2 class="card-h">Blog</h2>
 					<div class="inner-card">
 							<img class="card-image" src="/image/blog.svg" alt="blog"/>
@@ -129,15 +130,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="card-container">
-				<div class="card one-second r-shadow radius" onClick="location.href='icons/index.html'">
+			<div class="linear-h">
+				<div class="card col col-6 r-shadow radius" onClick="location.href='icons/index.html'">
 					<h2 class="card-h">Icons Gallary</h2>
 					<div class="inner-card">
 						<img class="card-image" src="/image/icon_gallery.svg" alt="icon"/>
 						Fantastic Plastic Design icons.
 					</div>
 				</div>
-				<div class="card one-second r-shadow radius" onClick="location.href='colour/index.html'">
+				<div class="card col col-6 r-shadow radius" onClick="location.href='colour/index.html'">
 					<h2 class="card-h">Colour</h2>
 					<div class="inner-card">
 						<img class="card-image" src="/image/colour.svg" alt="icon"/>
@@ -145,7 +146,7 @@
 					</div>
 				</div>
 <!--
-				<div class="card one-second r-shadow radius">
+				<div class="card col col-6 r-shadow radius">
 					<h2 class="card-h">Debug &amp; Test</h2>
 					Fast-design by clicking, ready for release version.
 				</div>
