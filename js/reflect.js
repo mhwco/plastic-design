@@ -20,6 +20,10 @@ $(document).ready(function(){
 	$(".dialog").hide();
 	rf.RfTypeNotMatchError.prototype=new Error();
 	rf.RfTypeNotMatchError.prototype.constructor=rf.RfTypeNotMatchError;
+	rf.RfEntityNotFoundError.prototype=new Error();
+	rf.RfEntityNotFoundError.prototype.constructor=rf.RfEntityNotFoundError;
+	rf.RfEntityAlreadyExistError.prototype=new Error();
+	rf.RfEntityAlreadyExistError.prototype.constructor=rf.RfEntityAlreadyExistError;
 });
 var rf={
 	/*Rf Errors start*/
@@ -106,7 +110,8 @@ var rf={
 					item是用户返回的内容。当type==1 || type=2时，Number item是用户选中项目的序号。当type==3时，String item是用户输入的内容。当type==0 || type==4时，item==undefined
 					*/
 					var selected_item,
-						return_method;
+						return_method,
+						input_text;
 					switch(set.position){
 						case 0://lt
 							$("#"+this.getId()).addClass("left-top-dialog");
@@ -139,17 +144,22 @@ var rf={
 							$("#"+this.getId()).addClass("center-dialog");
 					}
 					$("#"+this.getId()).addClass(set.className);
-					if(set.title){
-						$("#"+this.getId()).append("<h2>"+set.title+"</h2>");
+					if(set.title && $("#"+this.getId()+" h2").length===0){
+						$("#"+this.getId()).append("<h2></h2>");
 					}
-					if(set.text){
-						$("#"+this.getId()).append('<div class="dialog-content">'+set.text+"</div>");
+					$("#"+this.getId()+" h2").html(set.title);
+					if(set.text && $("#"+this.getId()+" .dialog-content").length===0){
+						$("#"+this.getId()).append('<div class="dialog-content"></div>');
 					}
+					$("#"+this.getId()+" .dialog-content").html(set.text);
 					switch(set.type){
 						case 0://alert
 							break;
 						case 1://select
-							$("#"+this.getId()).append("<select></select>");
+							if($("#"+this.getId()+" select").length===0){
+								$("#"+this.getId()).append("<select></select>");
+							}
+							$("#"+this.getId()+" select").html("");
 							for(var i=0;i<set.items.length;i++){
 								$("#"+this.getId()+" select").append('<option name="item-'+i+'">'+set.items[i]+'</option>');
 							}
@@ -161,7 +171,7 @@ var rf={
 						case 4://progress
 							break;
 					}
-					
+					return this;
 				},
 				toogle:function(with_mask){
 					if($("#"+this.getId()).length===0){
