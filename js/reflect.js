@@ -191,7 +191,7 @@ var rf={
 							for(i=0;i<set.items.length;i++){//add each li
 								$("#"+this.getId()+" .dialog-func ul").append('<li name="'+i+'">'+set.items[i]+'</li>');
 							}
-							return_item=0;
+							return_item=NaN;
 							break;
 						case 3://prompt
 							if($("#"+this.getId()+" .dialog-func input[type='text']").length===0){
