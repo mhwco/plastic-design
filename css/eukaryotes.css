@@ -238,7 +238,7 @@ body {
 .dialog {
 	position: fixed;
 	z-index: 500;
-	min-width:300px;
+	width:300px;
 	padding: 8px;
 }
 
@@ -268,12 +268,53 @@ body {
 .dialog-func>ul>li[selected]{
 	border:solid 1px #00a0e9;
 }
-
-.right-top-dialog {
-	right:5px;
-	top:5px;
+.left-top {
+	left:4px;
+	top:4px
 }
-
+.center-top {
+	left:0;
+	right:0;
+	margin:auto!important;
+	top:4px;
+}
+.right-top {
+	right:4px;
+	top:4px;
+}
+.left-center {
+	left:4px;
+	top:0;
+	bottom:0;
+	margin:auto!important;
+}
+.center-center {
+	left:0;
+	right:0;
+	margin:auto!important;
+	top:0;
+	bottom:0;
+}
+.right-center {
+	right:4px;
+	top:0;
+	bottom:0;
+	margin:auto!important;
+}
+.left-bottom {
+	left:4px;
+	bottom:4px
+}
+.center-bottom {
+	left:0;
+	right:0;
+	margin:auto!important;
+	bottom:4px;
+}
+.right-bottom {
+	right:4px;
+	bottom:4px;
+}
 #mask {
 	position: fixed;
 	width:100%;

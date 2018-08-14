@@ -115,36 +115,37 @@ var rf={
 					var i;
 					var return_item,
 						return_method;
+					$("#"+this.getId()).removeClass("left-top center-top right-top left-center center-center right-center left-bottom center-bottom right-bottom");
 					switch(set.position){
 						case 0://lt
-							$("#"+this.getId()).addClass("left-top-dialog");
+							$("#"+this.getId()).addClass("left-top");
 							break;
 						case 1://ct
-							$("#"+this.getId()).addClass("center-top-dialog");
+							$("#"+this.getId()).addClass("center-top");
 							break;
 						case 2://rt
-							$("#"+this.getId()).addClass("right-top-dialog");
+							$("#"+this.getId()).addClass("right-top");
 							break;
 						case 3://lc
-							$("#"+this.getId()).addClass("left-center-dialog");
+							$("#"+this.getId()).addClass("left-center");
 							break;
 						case 4://cc
-							$("#"+this.getId()).addClass("center-dialog");
+							$("#"+this.getId()).addClass("center-center");
 							break;
 						case 5://rc
-							$("#"+this.getId()).addClass("right-center-dialog");
+							$("#"+this.getId()).addClass("right-center");
 							break;
 						case 6://lb
-							$("#"+this.getId()).addClass("left-bottom-dialog");
+							$("#"+this.getId()).addClass("left-bottom");
 							break;
 						case 7://cb
-							$("#"+this.getId()).addClass("center-bottom-dialog");
+							$("#"+this.getId()).addClass("center-bottom");
 							break;
 						case 8://rb
-							$("#"+this.getId()).addClass("right-bottom-dialog");
+							$("#"+this.getId()).addClass("right-bottom");
 							break;
 						default:
-							$("#"+this.getId()).addClass("center-dialog");
+							$("#"+this.getId()).addClass("center-center");
 					}//set dialog position class
 					
 					$("#"+this.getId()).addClass(set.className);//add user personality class
@@ -253,12 +254,15 @@ var rf={
 					//register button onclick
 					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").click(function(){//negative
 						set.onReturn(1,return_item);
+						rf.dialog(s).close();
 					});
 					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-positive").click(function(){//positive
 						set.onReturn(0,return_item);
+						rf.dialog(s).close();
 					});
 					$("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").click(function(){//neutral
 						set.onReturn(2,return_item);
+						rf.dialog(s).close();
 					});
 					return this;
 				},
