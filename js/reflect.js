@@ -10,12 +10,15 @@
 *https//github.com/mhwco/plastic-design
 */
 "use strict";
+var reg_allowReturnOnClickMask;
 $(document).ready(function(){
 	$("body").prepend('<div id="mask"></div>');
 	$("#mask").hide();
 	$("#mask").click(function(){
-		$(".hide-on-mask").hide(200);
-		$("#mask").hide();
+		if(reg_allowReturnOnClickMask){
+			$(".hide-on-mask").hide(200);
+			$("#mask").hide();
+		}
 	});
 	$(".dialog").hide();
 	rf.RfTypeNotMatchError.prototype=new Error();
@@ -78,7 +81,7 @@ var rf={
 				},
 				create:function(){
 					if($("#"+this.getId()).length>0){
-						throw new rf.RfEntityAlreadyExistErrorError("The selected dialog '"+s+"' already exists.");
+						throw new rf.RfEntityAlreadyExistError("The selected dialog '"+s+"' already exists.");
 					}
 					$("body").prepend('<div id="'+this.getId()+'" class="dialog white-b radius" style="display:none"></div>');
 					return this;
@@ -109,6 +112,7 @@ var rf={
 					<无返回值> onReturn:f(Number method,Object item):当用户退出dialog时触发。method是用户的退出方式。-1:Mask(allowReturnOnClickMask==true),0:Positive,1:Negative,2:Neutral。
 					item是用户返回的内容。当type==1 || type=2时，Number item是用户选中项目的序号。当type==3时，String item是用户输入的内容。当type==0 || type==4时，item==undefined
 					*/
+					var i;
 					var selected_item,
 						return_method,
 						input_text;
@@ -142,35 +146,89 @@ var rf={
 							break;
 						default:
 							$("#"+this.getId()).addClass("center-dialog");
-					}
-					$("#"+this.getId()).addClass(set.className);
-					if(set.title && $("#"+this.getId()+" h2").length===0){
-						$("#"+this.getId()).append("<h2></h2>");
-					}
-					$("#"+this.getId()+" h2").html(set.title);
-					if(set.text && $("#"+this.getId()+" .dialog-content").length===0){
-						$("#"+this.getId()).append('<div class="dialog-content"></div>');
+					}//set dialog position class
+					
+					$("#"+this.getId()).addClass(set.className);//add user personality class
+					
+					if(set.text && $("#"+this.getId()+" .dialog-content").length===0){//if sets text and no tag
+						$("#"+this.getId()).prepend('<div class="dialog-content"></div>');
 					}
 					$("#"+this.getId()+" .dialog-content").html(set.text);
-					switch(set.type){
+					
+					if(set.title && $("#"+this.getId()+" h2").length===0){//if sets title and no tag
+						$("#"+this.getId()).prepend("<h2></h2>");
+					}
+					$("#"+this.getId()+" h2").html(set.title);
+					
+					if(set.allowReturnOnClickMask===null || set.allowReturnOnClickMask===undefined){//set default value is true
+						set.allowReturnOnClickMask=true;
+					}
+					reg_allowReturnOnClickMask=set.allowReturnOnClickMask;//register it for mask use
+					if(set.allowReturnOnClickMask){//set hide-on-mask class
+						$("#"+this.getId()).addClass("hide-on-mask");
+					}					
+					switch(set.type){//set dialog type
 						case 0://alert
-							break;
+							break;//for alert title and text are enough
 						case 1://select
-							if($("#"+this.getId()+" select").length===0){
-								$("#"+this.getId()).append("<select></select>");
+							if($("#"+this.getId()+" select").length===0){//if no tag
+								$("#"+this.getId()).prepend("<select></select>");
 							}
-							$("#"+this.getId()+" select").html("");
-							for(var i=0;i<set.items.length;i++){
+							$("#"+this.getId()+" select").html("");//clear the already-have-content 
+							for(i=0;i<set.items.length;i++){//add each option
 								$("#"+this.getId()+" select").append('<option name="item-'+i+'">'+set.items[i]+'</option>');
 							}
 							break;
 						case 2://list
+							if($("#"+this.getId()+" ul").length===0){
+								$("#"+this.getId()).prepend("<ul></ul>");
+							}
+							$("#"+this.getId()+" ul").html("");
+							for(i=0;i<set.items.length;i++){//add each li
+								$("#"+this.getId()+" ul").append('<li name="item-'+i+'">'+set.items[i]+'</li>');
+							}
 							break;
 						case 3://prompt
+							if($("#"+this.getId()+" input[type='text']").length===0){
+								$("#"+this.getId()).append('<input type="text"></ul>');
+							}
 							break;
 						case 4://progress
 							break;
 					}
+					
+					//check if have button container and if no add it
+					if($("#"+this.getId()+" .dialog-button-container").length===0){
+						$("#"+this.getId()).append('<div class="dialog-button-container"></div>');
+					}
+					//check different type button containers and if no add
+					if($("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container").length===0){
+						$("#"+this.getId()+" .dialog-button-container").append('<div class="positive-and-negative-botton-container"></div>');
+					}
+					if($("#"+this.getId()+" .dialog-button-container .neutral-botton-container").length===0 && set.neutral){
+						//if have neutral then check if have
+						$("#"+this.getId()+" .dialog-button-container").append('<div class="neutral-botton-container"></div>');
+					}
+					//chack if have button if no add
+					if($("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").length===0 && set.negative){
+						//check if have negative when sets negative
+						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container").append('<div class="dialog-negative dialog-button"></div>');
+					}
+					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").html(set.negative);
+					if($("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-positive").length===0){
+						//check if have positive
+						//must have positive
+						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container").append('<div class="dialog-positive dialog-button"></div>');
+						if(!set.positive){//set positive default value
+							set.positive="OK";
+						}
+					}
+					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-positive").html(set.positive);
+					if($("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").length===0 && set.neutral){
+						//check if have neutral when sets neutral
+						$("#"+this.getId()+" .dialog-button-container .neutral-botton-container").append('<div class="dialog-neutral dialog-button"></div>');
+					}
+					$("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").html(set.neutral);
 					return this;
 				},
 				toogle:function(with_mask){
