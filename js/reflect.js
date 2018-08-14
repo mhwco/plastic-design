@@ -180,6 +180,7 @@ var rf={
 							for(i=0;i<set.items.length;i++){//add each option
 								$("#"+this.getId()+" .dialog-func select").append('<option name="'+i+'">'+set.items[i]+'</option>');
 							}
+							return_item=0;
 							break;
 						case 2://list
 							if($("#"+this.getId()+" .dialog-func ul").length===0 && set.items){
@@ -189,6 +190,7 @@ var rf={
 							for(i=0;i<set.items.length;i++){//add each li
 								$("#"+this.getId()+" .dialog-func ul").append('<li name="'+i+'">'+set.items[i]+'</li>');
 							}
+							return_item=0;
 							break;
 						case 3://prompt
 							if($("#"+this.getId()+" .dialog-func input[type='text']").length===0){
@@ -212,7 +214,7 @@ var rf={
 						//if have neutral then check if have
 						$("#"+this.getId()+" .dialog-button-container").append('<div class="neutral-botton-container"></div>');
 					}
-					//chack if have button if no add
+					//check if have button if no add
 					if($("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").length===0 && set.negative){
 						//check if have negative when sets negative
 						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container").append('<div class="dialog-negative dialog-button"></div>');
@@ -234,19 +236,19 @@ var rf={
 					$("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").html(set.neutral);
 					//select register
 					$("#"+this.getId()+" .dialog-func select").change(function(){
-						return_item=$("#"+rf.dialog(s).getId()+" .dialog-func select");
+						if($(this).get(0).selectedIndex){
+							return_item=$(this).get(0).selectedIndex;
+						}
 					});
 					//list register
 					$("#"+this.getId()+" .dialog-func ul li").click(function(){
 						$("#"+rf.dialog(s).getId()+" .dialog-func ul li").removeAttr("selected");//new selected so remove former selected from attr
-						$("#"+rf.dialog(s).getId()+" .dialog-func ul li").css("border","none");//new selected so remove former selected from css
-						$(this).css("border","solid 1px #00a0e9");//set new selected css
 						$(this).attr("selected","selected");//set new selected attr
-						return_item=$(this).attr("name");//regester return_item
+						return_item=Number($(this).attr("name"));//regester return_item
 					});
 					//prompt register
 					$("#"+this.getId()+" .dialog-func input[type='text']").change(function(){
-						return_item=$(this).val;
+						return_item=$(this).val();
 					});
 					//register button onclick
 					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").click(function(){//negative

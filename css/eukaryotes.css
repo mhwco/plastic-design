@@ -262,7 +262,11 @@ body {
 }
 
 .dialog-func>ul>li{
-	padding: 8px 0;
+	padding: 8px 4px;
+}
+
+.dialog-func>ul>li[selected]{
+	border:solid 1px #00a0e9;
 }
 
 .right-top-dialog {
