@@ -113,9 +113,8 @@ var rf={
 					item是用户返回的内容。当type==1 || type=2时，Number item是用户选中项目的序号。当type==3时，String item是用户输入的内容。当type==0 || type==4时，item==undefined
 					*/
 					var i;
-					var selected_item,
-						return_method,
-						input_text;
+					var return_item,
+						return_method;
 					switch(set.position){
 						case 0://lt
 							$("#"+this.getId()).addClass("left-top-dialog");
@@ -179,7 +178,7 @@ var rf={
 								$("#"+this.getId()+" .dialog-func").prepend("<select></select>");
 							}
 							for(i=0;i<set.items.length;i++){//add each option
-								$("#"+this.getId()+" .dialog-func select").append('<option name="item-'+i+'">'+set.items[i]+'</option>');
+								$("#"+this.getId()+" .dialog-func select").append('<option name="'+i+'">'+set.items[i]+'</option>');
 							}
 							break;
 						case 2://list
@@ -188,7 +187,7 @@ var rf={
 								$("#"+this.getId()+" .dialog-func").prepend("<ul></ul>");
 							}
 							for(i=0;i<set.items.length;i++){//add each li
-								$("#"+this.getId()+" .dialog-func ul").append('<li name="item-'+i+'">'+set.items[i]+'</li>');
+								$("#"+this.getId()+" .dialog-func ul").append('<li name="'+i+'">'+set.items[i]+'</li>');
 							}
 							break;
 						case 3://prompt
@@ -233,6 +232,32 @@ var rf={
 						$("#"+this.getId()+" .dialog-button-container .neutral-botton-container").append('<div class="dialog-neutral dialog-button"></div>');
 					}
 					$("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").html(set.neutral);
+					//select register
+					$("#"+this.getId()+" .dialog-func select").change(function(){
+						return_item=$("#"+rf.dialog(s).getId()+" .dialog-func select");
+					});
+					//list register
+					$("#"+this.getId()+" .dialog-func ul li").click(function(){
+						$("#"+rf.dialog(s).getId()+" .dialog-func ul li").removeAttr("selected");//new selected so remove former selected from attr
+						$("#"+rf.dialog(s).getId()+" .dialog-func ul li").css("border","none");//new selected so remove former selected from css
+						$(this).css("border","solid 1px #00a0e9");//set new selected css
+						$(this).attr("selected","selected");//set new selected attr
+						return_item=$(this).attr("name");//regester return_item
+					});
+					//prompt register
+					$("#"+this.getId()+" .dialog-func input[type='text']").change(function(){
+						return_item=$(this).val;
+					});
+					//register button onclick
+					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").click(function(){//negative
+						set.onReturn(1,return_item);
+					});
+					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-positive").click(function(){//positive
+						set.onReturn(0,return_item);
+					});
+					$("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").click(function(){//neutral
+						set.onReturn(2,return_item);
+					});
 					return this;
 				},
 				toogle:function(with_mask){
