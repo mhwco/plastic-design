@@ -166,31 +166,35 @@ var rf={
 					reg_allowReturnOnClickMask=set.allowReturnOnClickMask;//register it for mask use
 					if(set.allowReturnOnClickMask){//set hide-on-mask class
 						$("#"+this.getId()).addClass("hide-on-mask");
-					}					
+					}			
+					if($("#"+this.getId()+" .dialog-func").length===0){
+						$("#"+this.getId()).append('<div class="dialog-func"></div>');
+					}
 					switch(set.type){//set dialog type
 						case 0://alert
 							break;//for alert title and text are enough
 						case 1://select
-							if($("#"+this.getId()+" select").length===0){//if no tag
-								$("#"+this.getId()).prepend("<select></select>");
+							if($("#"+this.getId()+" .dialog-func select").length===0 && set.items){//if no tag
+								$("#"+this.getId()+" .dialog-func").html("");//clear the already-have-content 
+								$("#"+this.getId()+" .dialog-func").prepend("<select></select>");
 							}
-							$("#"+this.getId()+" select").html("");//clear the already-have-content 
 							for(i=0;i<set.items.length;i++){//add each option
-								$("#"+this.getId()+" select").append('<option name="item-'+i+'">'+set.items[i]+'</option>');
+								$("#"+this.getId()+" .dialog-func select").append('<option name="item-'+i+'">'+set.items[i]+'</option>');
 							}
 							break;
 						case 2://list
-							if($("#"+this.getId()+" ul").length===0){
-								$("#"+this.getId()).prepend("<ul></ul>");
+							if($("#"+this.getId()+" .dialog-func ul").length===0 && set.items){
+								$("#"+this.getId()+" .dialog-func").html("");//clear the already-have-content 
+								$("#"+this.getId()+" .dialog-func").prepend("<ul></ul>");
 							}
-							$("#"+this.getId()+" ul").html("");
 							for(i=0;i<set.items.length;i++){//add each li
-								$("#"+this.getId()+" ul").append('<li name="item-'+i+'">'+set.items[i]+'</li>');
+								$("#"+this.getId()+" .dialog-func ul").append('<li name="item-'+i+'">'+set.items[i]+'</li>');
 							}
 							break;
 						case 3://prompt
-							if($("#"+this.getId()+" input[type='text']").length===0){
-								$("#"+this.getId()).append('<input type="text"></ul>');
+							if($("#"+this.getId()+" .dialog-func input[type='text']").length===0){
+								$("#"+this.getId()+" .dialog-func").html("");//clear the already-have-content 
+								$("#"+this.getId()+"  .dialog-func").append('<input type="text"></ul>');
 							}
 							break;
 						case 4://progress

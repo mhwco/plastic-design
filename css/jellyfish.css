@@ -115,7 +115,7 @@ a:active{
 	box-shadow:0 0 10px #000;
 }
 
-.shadow , .r-shadow, .r-s-shadow,.dialog-button,.r-shadow:active,.r-s-shadow:active,.dialog-button:active,.r-no-shadow:hover,.dialog>ul>li:hover{
+.shadow , .r-shadow, .r-s-shadow,.dialog-button,.r-shadow:active,.r-s-shadow:active,.dialog-button:active,.r-no-shadow:hover,.dialog-func>ul>li:hover{
 	box-shadow:0 0 4px #000;
 	transition:box-shadow 0.2s;
 }
@@ -124,7 +124,7 @@ a:active{
 	box-shadow:0 0 2px #000;
 }
 
-.no-shadow,.r-no-shadow,.r-no-shadow:active,.dialog>ul>li,.dialog>ul>li:active{
+.no-shadow,.r-no-shadow,.r-no-shadow:active,.dialog-func>ul>li,.dialog-func>ul>li:active{
 	box-shadow: none;
 	transition:box-shadow 0.2s;
 }

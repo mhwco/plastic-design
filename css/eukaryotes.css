@@ -246,22 +246,22 @@ body {
 	font-size:18px;
 }
 
-.dialog>input[type="text"]{
+.dialog-func>input[type="text"]{
 	display: block;
 	width: 100%;
 	height: 24px;
 }
 
-.dialog>select {
+.dialog-func>select {
 	margin: 4px 0;
 }
 
-.dialog>ul {
+.dialog-func>ul {
 	list-style-type: none;
 	padding: 0;
 }
 
-.dialog>ul>li{
+.dialog-func>ul>li{
 	padding: 8px 0;
 }
 
