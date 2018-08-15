@@ -12,6 +12,11 @@
 "use strict";
 var reg_allowReturnOnClickMask;
 $(document).ready(function(){
+	$(".title-bar,.action-bar").each(function(){
+		var title_bar_height=0;
+		title_bar_height+=$(this).height();
+		$(".main,main").css("padding-top",title_bar_height+"px");
+	});
 	$("body").prepend('<div id="mask"></div>');
 	$("#mask").hide();
 	$("#mask").click(function(){
@@ -252,18 +257,20 @@ var rf={
 						return_item=$(this).val();
 					});
 					//register button onclick
-					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").click(function(){//negative
-						set.onReturn(1,return_item);
-						rf.dialog(s).close();
-					});
-					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-positive").click(function(){//positive
-						set.onReturn(0,return_item);
-						rf.dialog(s).close();
-					});
-					$("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").click(function(){//neutral
-						set.onReturn(2,return_item);
-						rf.dialog(s).close();
-					});
+					if(set.onReturn){//if sets then return
+						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").click(function(){//negative
+							set.onReturn(1,return_item);
+							rf.dialog(s).close();
+						});
+						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-positive").click(function(){//positive
+							set.onReturn(0,return_item);
+							rf.dialog(s).close();
+						});
+						$("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").click(function(){//neutral
+							set.onReturn(2,return_item);
+							rf.dialog(s).close();
+						});
+					}
 					return this;
 				},
 				toogle:function(with_mask){
