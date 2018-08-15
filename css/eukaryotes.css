@@ -171,7 +171,7 @@ body {
 }
 
 .card {
-	border:solid #777 1px;
+	border:solid rgba(0,0,0,0.70) 1px;
 }
 
 .col{
@@ -184,7 +184,7 @@ body {
 
 .card-h {
 	margin:4px;
-	border-bottom: solid #777;
+	border-bottom: solid rgba(0,0,0,0.70);
 }
 
 .inner-card {
@@ -263,7 +263,7 @@ body {
 	padding: 0;
 }
 
-.dialog-func>ul>li{
+.dialog-func>ul>li,.drawer-group>ul>li{
 	padding: 8px 4px;
 }
 
@@ -364,4 +364,56 @@ body {
 
 .dialog-button-container {
 	margin-top: 4px;
+}
+
+.drawer {
+	position: fixed;
+	width:240px;
+	height: 100%;
+	z-index: 500;
+	overflow-y: scroll;
+}
+
+.drawer-header {
+	width: 100%;
+}
+
+.drawer-header-bg {
+	
+}
+
+.drawer-header-bg>img {
+	width:100%;
+}
+
+.drawer-icon {
+	position: absolute;
+	top:8px;
+	right:8px;
+	width:64px;
+}
+
+.drawer-header>h2 {
+	margin: 0 8px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.drawer-menu {
+	margin: 8px;
+}
+
+.drawer-group>h3 {
+	margin:0;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.drawer-group {
+	
+}
+
+.drawer-group>ul {
+	list-style: none;
+	padding: 0;
 }
