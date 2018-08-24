@@ -9,11 +9,8 @@ $(document).ready(function(){
 		items:["English(en)","中文(中国)(zh-CN)"],
 		onReturn:function(method,item){
 			if(method!==-1){
-				switch(item){
-					case 1:
-						location.pathname="/zh_cn/"+location.pathname.split("/")[2];
-						break;
-				}
+				var lang=["en","zh_cn"];
+				location.pathname="/"+lang[item]+"/"+location.pathname.split("/")[2];
 			}
 		}
 	});
