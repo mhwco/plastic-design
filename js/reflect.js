@@ -223,13 +223,13 @@ var rf={
 					//check if have button if no add
 					if($("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").length===0 && set.negative){
 						//check if have negative when sets negative
-						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container").append('<div class="dialog-negative dialog-button"></div>');
+						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container").append('<button class="dialog-negative dialog-button"></button>');
 					}
 					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-negative").html(set.negative);
 					if($("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-positive").length===0){
 						//check if have positive
 						//must have positive
-						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container").append('<div class="dialog-positive dialog-button"></div>');
+						$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container").append('<button class="dialog-positive dialog-button"></button>');
 						if(!set.positive){//set positive default value
 							set.positive="OK";
 						}
@@ -237,7 +237,7 @@ var rf={
 					$("#"+this.getId()+" .dialog-button-container .positive-and-negative-botton-container .dialog-positive").html(set.positive);
 					if($("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").length===0 && set.neutral){
 						//check if have neutral when sets neutral
-						$("#"+this.getId()+" .dialog-button-container .neutral-botton-container").append('<div class="dialog-neutral dialog-button"></div>');
+						$("#"+this.getId()+" .dialog-button-container .neutral-botton-container").append('<button class="dialog-neutral dialog-button"></button>');
 					}
 					$("#"+this.getId()+" .dialog-button-container .neutral-botton-container .dialog-neutral").html(set.neutral);
 					//select register
