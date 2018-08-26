@@ -9,7 +9,7 @@
 *https//github.com/mhwco/plastic-design
 */
 @media (max-width: 600px){
-	.nav-button {
+	.title-bar>nav:last-of-type>button {
 		width: 30px;
 		height: 30px;
 	}
@@ -21,7 +21,7 @@
 	.linear-h{
 		flex-direction: column;
 	}
-	.title-bar-nav{
+	.title-bar>nav:first-of-type{
 		display: none;
 	}
 }
@@ -67,7 +67,7 @@
 	}
 }
 @media(max-width:480px){
-	.title-bar-nav {
+	.title-bar>nav:first-of-type {
 		display: none;
 	}
 }
@@ -102,7 +102,11 @@
 body {
 	margin:0;
 }
-
+button{
+	background: none;
+	padding:none;
+	border:none;
+}
 .title-bar {
 	position: fixed;
 	width:100%;
@@ -123,7 +127,7 @@ body {
 	float:left;
 }
 
-.title-bar > .title-bar-nav {
+.title-bar>nav:first-of-type {
 	margin:0 24px;
 	float:left;
 }
@@ -132,12 +136,12 @@ body {
 	margin:12px;
 }
 
-.nav-button {
-	width:40px;
-	height: 40px;
+.title-bar>nav:last-of-type>button {
+	width:50px;
+	height: 50px;
 }
 
-.title-bar > .title-bar-buttton-nav {
+.title-bar>nav:last-of-type {
 	position: absolute;
 	right:0;
 	margin: 0 5px;
@@ -416,4 +420,8 @@ body {
 .drawer-group>ul {
 	list-style: none;
 	padding: 0;
+}
+
+.title-bar>nav:last-of-type>button>img {
+	width:100%;
 }
