@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rf:navigation
+	xmlns:rf="https://pd.mhwco.org/en/design/reflect"
+	rf:name="demo_nav">
+	<rf:item
+		rf:type="hyperlink"
+		rf:name="mhwco" 
+		rf:title="MHW Cooperation Organization"
+		rf:imgsrc="https://www.mhwco.org/image/mhwco-logo/mhwco-min.svg"
+		rf:href="https://www.mhwco.org/"/>
+	<rf:item
+		rf:type="group"
+		rf:name="members"
+		rf:title="MHWCO members"
+		rf:href="https://www.mhwco.org/members"
+		rf:visiblity="hide">
+		<rf:item
+			rf:type="button"
+			rf:name="hypst"
+			rf:title="Hyperbola Studio"
+			rf:id="hypst"/>
+		<rf:item
+			rf:type="button"
+			rf:name="mcoke"
+			rf:title="MICOKE Studio"
+			rf:id="mcoke"/>
+		<rf:item
+			rf:type="button"
+			rf:name="white"
+			rf:title="White Studio"
+			rf:id="white"/>
+	</rf:item>
+</rf:navigation>
