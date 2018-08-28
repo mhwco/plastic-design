@@ -1,4 +1,4 @@
-<!DOCTYPE rf:navigation SYSTEM "navigation.dtd">
+<!DOCTYPE rf:navigation SYSTEM "https://pd.mhwco.org/source/navigation.dtd">
 <?xml version="1.0" encoding="utf-8"?>
 <rf:navigation
 	xmlns:rf="https://pd.mhwco.org/en/design/reflect"
