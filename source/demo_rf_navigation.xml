@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8" xmlns:rf="https://pd.mhwco.org/en/design/reflect"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE rf:navigation>
 <rf:navigation
+	xmlns:rf="https://pd.mhwco.org/en/design/reflect"
 	rf:name="demo_nav">
 	<rf:item
 		rf:type="hyperlink"
