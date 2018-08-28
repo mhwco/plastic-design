@@ -13,9 +13,8 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
+a,.title-bar > .title-self {
 	text-decoration: none;
-	color:white;
 }
 
 a:hover{
