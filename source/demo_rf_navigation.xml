@@ -7,9 +7,9 @@
 		rf:name="mhwco" 
 		rf:title="MHW Cooperation Organization"
 		rf:imgsrc="https://www.mhwco.org/image/mhwco-logo/mhwco-min.svg"
-		rf:href="https://www.mhwco.org/"/>
-	<rf:item
-		rf:type="group"
+		rf:href="https://www.mhwco.org/">
+	<rf:group
+		rf:type="hyperlink"
 		rf:name="members"
 		rf:title="MHWCO members"
 		rf:href="https://www.mhwco.org/members"
@@ -18,16 +18,16 @@
 			rf:type="button"
 			rf:name="hypst"
 			rf:title="Hyperbola Studio"
-			rf:id="hypst"/>
+			rf:id="hypst">
 		<rf:item
 			rf:type="button"
 			rf:name="mcoke"
 			rf:title="MICOKE Studio"
-			rf:id="mcoke"/>
+			rf:id="mcoke">
 		<rf:item
 			rf:type="button"
 			rf:name="white"
 			rf:title="White Studio"
-			rf:id="white"/>
-	</rf:item>
+			rf:id="white">
+	</rf:group>
 </rf:navigation>
