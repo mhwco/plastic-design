@@ -1,0 +1,19 @@
+<!ELEMENT rf:navigation (rf:group,rf:item)*>
+<!ELEMENT rf:group (rf:group,rf:item)*>
+<!ELEMENT rf:item EMPTY>
+<!ATTLIST rf:navigation rf:name ID #REQUIRED>
+<!ATTLIST rf:navigation rf:id ID #IMPLIED>
+<!ATTLIST rf:group rf:name ID #REQUIRED>
+<!ATTLIST rf:group rf:id ID>
+<!ATTLIST rf:group rf:type (hyperlink|button) "hyperlink">
+<!ATTLIST rf:group rf:title CDATA #IMPLIED>
+<!ATTLIST rf:group rf:imgsrc CDATA #IMPLIED>
+<!ATTLIST rf:group rf:href CDATA #IMPLIED>
+<!ATTLIST rf:group rf:visiblity (visible|hide|invisible) "visible">
+<!ATTLIST rf:item rf:name ID #REQUIRED>
+<!ATTLIST rf:item rf:id ID>
+<!ATTLIST rf:item rf:type (hyperlink|button) "hyperlink">
+<!ATTLIST rf:item rf:title CDATA #IMPLIED>
+<!ATTLIST rf:item rf:imgsrc CDATA #IMPLIED>
+<!ATTLIST rf:item rf:href CDATA #IMPLIED>
+<!ATTLIST rf:item rf:visiblity (visible|hide|invisible) "visible">
