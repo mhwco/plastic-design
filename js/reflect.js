@@ -7,7 +7,7 @@
 *Released Under MIT License
 *https://pd.mhwco.org/en/copyright
 *View on GitHub
-*https//github.com/mhwco/plastic-design
+*https://github.com/mhwco/plastic-design
 */
 "use strict";
 var reg_allowReturnOnClickMask;
